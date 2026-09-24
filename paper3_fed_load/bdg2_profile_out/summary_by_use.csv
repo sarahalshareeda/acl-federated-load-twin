@@ -1,0 +1,17 @@
+primary_use,n_buildings,mean_coverage,mean_load
+Education,604,0.943,183.791
+Office,296,0.963,141.337
+Entertainment/public assembly,203,0.949,95.435
+Public services,166,0.934,94.15
+Lodging/residential,149,0.969,85.104
+Healthcare,27,0.966,287.205
+Other,26,0.946,43.133
+Parking,23,0.982,40.593
+Warehouse/storage,14,0.974,37.88
+Manufacturing/industrial,11,0.983,75.988
+Retail,11,0.988,68.019
+Services,9,0.992,89.953
+Technology/science,7,0.89,112.876
+Food sales and service,6,0.992,79.63
+Utility,4,0.928,158.175
+Religious worship,3,0.972,4.243

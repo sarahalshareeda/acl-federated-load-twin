@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Duplicates from re-downloading
+* (1).*
+*-2.*
+*.tmp
+*~
+
+# Kafka, if anyone extracts it into the repo by accident
+kafka_2.13-*/
+kafka_2.13-*.tgz*
+kraft-combined-logs/
+
+# Local run output that is regenerated, not shipped.
+# model_out/ IS tracked: it holds the artifacts the paper's numbers come from.
+acl_state_ckpt.pkl

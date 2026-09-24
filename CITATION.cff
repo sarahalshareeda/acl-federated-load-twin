@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: >-
+  ACL-Federated-Load-Twin: reference implementation for cost-optimal
+  asymmetric conformal calibration for degraded federated load
+  forecasting
+message: If you use this software or the derived data, please cite it.
+type: software
+authors:
+  - family-names: Al-Shareeda
+    given-names: Sarah
+    affiliation: >-
+      Department of Computer Systems and Technology, Faculty of Computer
+      Science and Information Technology, Universiti Malaya
+    orcid: "https://orcid.org/0000-0001-6337-0453"
+repository-code: https://github.com/sarahalshareeda/acl-federated-load-twin
+license: MIT
+keywords:
+  - conformal prediction
+  - federated learning
+  - probabilistic load forecasting
+  - uncertainty quantification
+  - digital twin
+  - smart grid
+version: 1.0.0
+date-released: "2026-09-24"

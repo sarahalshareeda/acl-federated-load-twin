@@ -1,0 +1,34 @@
+{
+  "title": "ACL-Federated-Load-Twin: reference implementation for cost-optimal asymmetric conformal calibration for degraded federated load forecasting",
+  "upload_type": "software",
+  "description": "<p>Reference implementation and derived dataset for an Adaptive Conformal Layer (ACL) applied to federated load forecasting under telemetry degradation.</p><p>A fleet of 60 buildings trains one federated forecaster. Each building re-sizes its prediction interval daily from realized errors, scoring signed residuals so the upper and lower radii are set independently. The cost-optimal coverage target is either set in closed form by a newsvendor rule when reserve costs are published, or learned online by a two-segment UCB bandit from daily settlement bills when they are not. The deployment stage runs as a digital twin at two fidelities: a single-process simulator, and a production mirror in which meters publish daily batches over MQTT into a keyed Kafka log consumed by a stateful ACL processor.</p><p><strong>Licensing.</strong> Code, notebooks, figures and documentation are MIT. The derived per-building parquet files under <code>bdg2_federated_out/</code> and <code>bdg2_profile_out/</code> are an adaptation of the Building Data Genome Project 2 (doi:10.5281/zenodo.3887306) and remain under CC BY-SA 4.0. See LICENSE in the archive for the full terms and for the list of changes made to the original data.</p>",
+  "license": "cc-by-sa-4.0",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Al-Shareeda, Sarah",
+      "affiliation": "Universiti Malaya",
+      "orcid": "0000-0001-6337-0453"
+    }
+  ],
+  "keywords": [
+    "conformal prediction",
+    "federated learning",
+    "probabilistic load forecasting",
+    "uncertainty quantification",
+    "adaptive conformal inference",
+    "digital twin",
+    "smart grid",
+    "newsvendor",
+    "multi-armed bandit"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.3887306",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "language": "eng"
+}

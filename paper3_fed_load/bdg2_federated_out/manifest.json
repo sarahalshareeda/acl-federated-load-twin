@@ -1,0 +1,1194 @@
+{
+  "target_meter": "electricity",
+  "use_cleaned": true,
+  "split_fracs": {
+    "train": 0.65,
+    "val": 0.1,
+    "calib": 0.1,
+    "test": 0.15
+  },
+  "lags": [
+    1,
+    2,
+    24
+  ],
+  "rolls": [
+    3,
+    6,
+    24
+  ],
+  "known_future": [
+    "calendar(hod,dow,doy cyc)",
+    "airTemperature"
+  ],
+  "degraded_at_deploy": [
+    "dewTemperature",
+    "cloudCoverage",
+    "precipDepth1HR",
+    "seaLvlPressure",
+    "windSpeed",
+    "windDirection"
+  ],
+  "causal_seeded_then_rolled": [
+    "load_lag1",
+    "load_lag2",
+    "load_lag24",
+    "load_ma3",
+    "load_ma6",
+    "load_ma24"
+  ],
+  "clients": {
+    "Hog_education_Josh": {
+      "site": "Hog",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_education_Josh.parquet"
+    },
+    "Robin_education_Karyl": {
+      "site": "Robin",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_education_Karyl.parquet"
+    },
+    "Robin_office_Victor": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Victor.parquet"
+    },
+    "Lamb_education_Emilie": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Emilie.parquet"
+    },
+    "Lamb_education_Camille": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Camille.parquet"
+    },
+    "Hog_office_Alisha": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Alisha.parquet"
+    },
+    "Hog_office_Bill": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Bill.parquet"
+    },
+    "Hog_office_Gustavo": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Gustavo.parquet"
+    },
+    "Robin_office_Zelma": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Zelma.parquet"
+    },
+    "Hog_office_Merilyn": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Merilyn.parquet"
+    },
+    "Robin_office_Wai": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Wai.parquet"
+    },
+    "Lamb_office_Callie": {
+      "site": "Lamb",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_office_Callie.parquet"
+    },
+    "Lamb_office_Vasiliki": {
+      "site": "Lamb",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_office_Vasiliki.parquet"
+    },
+    "Lamb_education_Randal": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Randal.parquet"
+    },
+    "Hog_education_Donnie": {
+      "site": "Hog",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_education_Donnie.parquet"
+    },
+    "Robin_office_Lindsay": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Lindsay.parquet"
+    },
+    "Robin_education_Kiera": {
+      "site": "Robin",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_education_Kiera.parquet"
+    },
+    "Hog_office_Miriam": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Miriam.parquet"
+    },
+    "Robin_office_Sammie": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Sammie.parquet"
+    },
+    "Hog_education_Rachael": {
+      "site": "Hog",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_education_Rachael.parquet"
+    },
+    "Lamb_education_Maritza": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Maritza.parquet"
+    },
+    "Eagle_office_Mable": {
+      "site": "Eagle",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Eagle_office_Mable.parquet"
+    },
+    "Lamb_office_Stefani": {
+      "site": "Lamb",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_office_Stefani.parquet"
+    },
+    "Moose_education_Ricardo": {
+      "site": "Moose",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "precipDepth1HR": "calendar_regression",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Moose_education_Ricardo.parquet"
+    },
+    "Hog_education_Cathleen": {
+      "site": "Hog",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_education_Cathleen.parquet"
+    },
+    "Shrew_office_Lin": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Lin.parquet"
+    },
+    "Lamb_education_Rodrigo": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Rodrigo.parquet"
+    },
+    "Shrew_office_Nora": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Nora.parquet"
+    },
+    "Shrew_office_Katherine": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Katherine.parquet"
+    },
+    "Shrew_office_Ila": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Ila.parquet"
+    },
+    "Shrew_office_Doug": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Doug.parquet"
+    },
+    "Shrew_office_Doris": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Doris.parquet"
+    },
+    "Shrew_office_Rose": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Rose.parquet"
+    },
+    "Shrew_office_Kenneth": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Kenneth.parquet"
+    },
+    "Shrew_office_Sherill": {
+      "site": "Shrew",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Shrew_office_Sherill.parquet"
+    },
+    "Robin_office_Gayle": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Gayle.parquet"
+    },
+    "Eagle_education_Brianne": {
+      "site": "Eagle",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Eagle_education_Brianne.parquet"
+    },
+    "Robin_education_Zenia": {
+      "site": "Robin",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_education_Zenia.parquet"
+    },
+    "Lamb_office_Velma": {
+      "site": "Lamb",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_office_Velma.parquet"
+    },
+    "Lamb_education_Gabriel": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Gabriel.parquet"
+    },
+    "Lamb_education_Isabelle": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Isabelle.parquet"
+    },
+    "Hog_education_Madge": {
+      "site": "Hog",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_education_Madge.parquet"
+    },
+    "Fox_office_Clayton": {
+      "site": "Fox",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_office_Clayton.parquet"
+    },
+    "Bear_education_Bob": {
+      "site": "Bear",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Bear_education_Bob.parquet"
+    },
+    "Fox_education_Rudolph": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Rudolph.parquet"
+    },
+    "Fox_education_Delma": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Delma.parquet"
+    },
+    "Fox_education_Ray": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Ray.parquet"
+    },
+    "Robin_office_Adolph": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Adolph.parquet"
+    },
+    "Wolf_education_Vivian": {
+      "site": "Wolf",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Wolf_education_Vivian.parquet"
+    },
+    "Wolf_education_Arnulfo": {
+      "site": "Wolf",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Wolf_education_Arnulfo.parquet"
+    },
+    "Robin_office_Shirlene": {
+      "site": "Robin",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "seaLvlPressure": "contextual_mean",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Robin_office_Shirlene.parquet"
+    },
+    "Hog_office_Sydney": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Sydney.parquet"
+    },
+    "Fox_education_Kim": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Kim.parquet"
+    },
+    "Fox_education_Tamika": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Tamika.parquet"
+    },
+    "Fox_education_Carleen": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Carleen.parquet"
+    },
+    "Fox_education_Ashli": {
+      "site": "Fox",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "contextual_mean"
+      },
+      "file": "Fox_education_Ashli.parquet"
+    },
+    "Wolf_education_Ursula": {
+      "site": "Wolf",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Wolf_education_Ursula.parquet"
+    },
+    "Bear_education_Iris": {
+      "site": "Bear",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "calendar_regression",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "calendar_regression",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Bear_education_Iris.parquet"
+    },
+    "Hog_office_Rolando": {
+      "site": "Hog",
+      "cluster": "Office",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "precipDepth1HR": "contextual_mean",
+        "seaLvlPressure": "calendar_regression",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Hog_office_Rolando.parquet"
+    },
+    "Lamb_education_Terina": {
+      "site": "Lamb",
+      "cluster": "Education",
+      "n_rows": 17544,
+      "date_start": "2016-01-01 00:00:00",
+      "date_end": "2017-12-31 23:00:00",
+      "n_train": 11403,
+      "n_val": 1754,
+      "n_calib": 1754,
+      "n_test": 2633,
+      "reconstruction_choice": {
+        "dewTemperature": "calendar_regression",
+        "cloudCoverage": "contextual_mean",
+        "windSpeed": "contextual_mean",
+        "windDirection": "calendar_regression"
+      },
+      "file": "Lamb_education_Terina.parquet"
+    }
+  }
+}
