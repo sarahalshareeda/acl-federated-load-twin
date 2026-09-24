@@ -1,5 +1,7 @@
 # Cost-Optimal Asymmetric Conformal Calibration for Degraded Federated Load Forecasting
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22930670.svg)](https://doi.org/10.5281/zenodo.22930670)
+
 Reference implementation accompanying the paper.
 
 A fleet of 60 buildings trains one federated forecaster. Each building wraps its
@@ -284,12 +286,13 @@ If you use this code or data, please cite the reference implementation:
                   Federated Load Forecasting},
   year         = {2026},
   publisher    = {Zenodo},
-  doi          = {XX.XXXX/zenodo.XXXXXXX},
+  doi          = {10.5281/zenodo.22930670},
   howpublished = {\url{https://github.com/sarahalshareeda/acl-federated-load-twin}}
 }
 ```
 
 The DOI above is the concept DOI, which always resolves to the latest release.
+To cite this exact release instead, use 10.5281/zenodo.22930671.
 Each tagged release also gets its own version DOI, listed on the Zenodo record.
 `CITATION.cff` carries the same metadata in a form GitHub reads.
 
